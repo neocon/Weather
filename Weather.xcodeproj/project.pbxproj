@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		33C6F3F820A3223D009A501E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6F3F720A3223D009A501E /* AppDelegate.swift */; };
-		33C6F3FA20A3223D009A501E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6F3F920A3223D009A501E /* ViewController.swift */; };
 		33C6F3FD20A3223D009A501E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C6F3FB20A3223D009A501E /* Main.storyboard */; };
 		33C6F3FF20A3223D009A501E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C6F3FE20A3223D009A501E /* Assets.xcassets */; };
 		33C6F40220A3223D009A501E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C6F40020A3223D009A501E /* LaunchScreen.storyboard */; };
+		33C6F40E20A322CC009A501E /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6F40D20A322CC009A501E /* LoginFormController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		33C6F3F420A3223D009A501E /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C6F3F720A3223D009A501E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33C6F3F920A3223D009A501E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		33C6F3FC20A3223D009A501E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33C6F3FE20A3223D009A501E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33C6F40120A3223D009A501E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33C6F40320A3223D009A501E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33C6F40D20A322CC009A501E /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,46 @@
 		33C6F3F620A3223D009A501E /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				33C6F40C20A322AD009A501E /* Helpers */,
+				33C6F40B20A3229F009A501E /* Model */,
+				33C6F40A20A32292009A501E /* View */,
+				33C6F40920A32287009A501E /* Controllers */,
 				33C6F3F720A3223D009A501E /* AppDelegate.swift */,
-				33C6F3F920A3223D009A501E /* ViewController.swift */,
-				33C6F3FB20A3223D009A501E /* Main.storyboard */,
 				33C6F3FE20A3223D009A501E /* Assets.xcassets */,
 				33C6F40020A3223D009A501E /* LaunchScreen.storyboard */,
 				33C6F40320A3223D009A501E /* Info.plist */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		33C6F40920A32287009A501E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				33C6F40D20A322CC009A501E /* LoginFormController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		33C6F40A20A32292009A501E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33C6F3FB20A3223D009A501E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33C6F40B20A3229F009A501E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33C6F40C20A322AD009A501E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C6F3FA20A3223D009A501E /* ViewController.swift in Sources */,
+				33C6F40E20A322CC009A501E /* LoginFormController.swift in Sources */,
 				33C6F3F820A3223D009A501E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UNSQGZW9WL;
 				INFOPLIST_FILE = Weather/Info.plist;
@@ -289,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UNSQGZW9WL;
 				INFOPLIST_FILE = Weather/Info.plist;

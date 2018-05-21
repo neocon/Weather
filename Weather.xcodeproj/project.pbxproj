@@ -10,6 +10,13 @@
 		33C6F3F820A3223D009A501E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6F3F720A3223D009A501E /* AppDelegate.swift */; };
 		33C6F3FF20A3223D009A501E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C6F3FE20A3223D009A501E /* Assets.xcassets */; };
 		33C6F40E20A322CC009A501E /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6F40D20A322CC009A501E /* LoginFormController.swift */; };
+		33D9BCF220B2F53300917A95 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9BCF120B2F53300917A95 /* ImageViewCell.swift */; };
+		33D9BCF420B2F59F00917A95 /* FriendPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9BCF320B2F59F00917A95 /* FriendPhotosViewController.swift */; };
+		33D9BCF620B2FFBF00917A95 /* GroupListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9BCF520B2FFBF00917A95 /* GroupListViewCell.swift */; };
+		33D9BCF820B2FFD200917A95 /* AllGroupListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9BCF720B2FFD200917A95 /* AllGroupListViewCell.swift */; };
+		33D9BCFA20B3005C00917A95 /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9BCF920B3005C00917A95 /* GroupListViewController.swift */; };
+		33D9BCFC20B3006B00917A95 /* AllGroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9BCFB20B3006B00917A95 /* AllGroupListViewController.swift */; };
+		33D9BCFE20B3009200917A95 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9BCFD20B3009200917A95 /* Group.swift */; };
 		33E3784920B1B311004FA871 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33E3784620B1B310004FA871 /* Main.storyboard */; };
 		33E3784A20B1B311004FA871 /* FriendListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E3784720B1B310004FA871 /* FriendListViewCell.swift */; };
 		33E3784B20B1B311004FA871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33E3784820B1B311004FA871 /* LaunchScreen.storyboard */; };
@@ -24,6 +31,13 @@
 		33C6F3FE20A3223D009A501E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33C6F40320A3223D009A501E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C6F40D20A322CC009A501E /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		33D9BCF120B2F53300917A95 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		33D9BCF320B2F59F00917A95 /* FriendPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotosViewController.swift; sourceTree = "<group>"; };
+		33D9BCF520B2FFBF00917A95 /* GroupListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewCell.swift; sourceTree = "<group>"; };
+		33D9BCF720B2FFD200917A95 /* AllGroupListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupListViewCell.swift; sourceTree = "<group>"; };
+		33D9BCF920B3005C00917A95 /* GroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
+		33D9BCFB20B3006B00917A95 /* AllGroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupListViewController.swift; sourceTree = "<group>"; };
+		33D9BCFD20B3009200917A95 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		33E3784620B1B310004FA871 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		33E3784720B1B310004FA871 /* FriendListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendListViewCell.swift; path = Weather/Views/FriendListViewCell.swift; sourceTree = SOURCE_ROOT; };
 		33E3784820B1B311004FA871 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Weather/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
@@ -65,9 +79,9 @@
 				33C6F40C20A322AD009A501E /* Helpers */,
 				33C6F40B20A3229F009A501E /* Model */,
 				33C6F40920A32287009A501E /* Controllers */,
-				33C6F3FE20A3223D009A501E /* Assets.xcassets */,
 				33D9BCF020B29A6600917A95 /* Views */,
 				33C6F3F720A3223D009A501E /* AppDelegate.swift */,
+				33C6F3FE20A3223D009A501E /* Assets.xcassets */,
 				33E3784820B1B311004FA871 /* LaunchScreen.storyboard */,
 				33C6F40320A3223D009A501E /* Info.plist */,
 			);
@@ -79,6 +93,9 @@
 			children = (
 				33E3784E20B1B3C8004FA871 /* FriendListViewController.swift */,
 				33C6F40D20A322CC009A501E /* LoginFormController.swift */,
+				33D9BCF320B2F59F00917A95 /* FriendPhotosViewController.swift */,
+				33D9BCF920B3005C00917A95 /* GroupListViewController.swift */,
+				33D9BCFB20B3006B00917A95 /* AllGroupListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -87,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				33E3784C20B1B363004FA871 /* Friend.swift */,
+				33D9BCFD20B3009200917A95 /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,6 +122,9 @@
 			children = (
 				33E3784720B1B310004FA871 /* FriendListViewCell.swift */,
 				33E3784620B1B310004FA871 /* Main.storyboard */,
+				33D9BCF120B2F53300917A95 /* ImageViewCell.swift */,
+				33D9BCF520B2FFBF00917A95 /* GroupListViewCell.swift */,
+				33D9BCF720B2FFD200917A95 /* AllGroupListViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,12 +201,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D9BCFC20B3006B00917A95 /* AllGroupListViewController.swift in Sources */,
 				33E3784F20B1B3C8004FA871 /* FriendListViewController.swift in Sources */,
+				33D9BCF220B2F53300917A95 /* ImageViewCell.swift in Sources */,
+				33D9BCF820B2FFD200917A95 /* AllGroupListViewCell.swift in Sources */,
 				33C6F40E20A322CC009A501E /* LoginFormController.swift in Sources */,
 				33E3784A20B1B311004FA871 /* FriendListViewCell.swift in Sources */,
+				33D9BCFE20B3009200917A95 /* Group.swift in Sources */,
 				33C6F3F820A3223D009A501E /* AppDelegate.swift in Sources */,
 				33E3785120B28EDC004FA871 /* UIView+Layer.swift in Sources */,
+				33D9BCFA20B3005C00917A95 /* GroupListViewController.swift in Sources */,
+				33D9BCF420B2F59F00917A95 /* FriendPhotosViewController.swift in Sources */,
 				33E3784D20B1B363004FA871 /* Friend.swift in Sources */,
+				33D9BCF620B2FFBF00917A95 /* GroupListViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

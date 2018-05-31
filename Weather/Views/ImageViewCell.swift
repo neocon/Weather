@@ -7,7 +7,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ImageViewCell: UICollectionViewCell {
     @IBOutlet weak var bigImageContainer: UIImageView!
+    
+    func configure(photo: Photo){
+        if let iconURL = URL(string: photo.photoUrl) {
+            bigImageContainer.kf.setImage(with: iconURL)
+        }
+    }
 }

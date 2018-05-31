@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GroupListViewCell: UITableViewCell {
     @IBOutlet weak var imageContainer: UIImageView!
     @IBOutlet weak var groupNameLabel: UILabel!
+    
+    func configure(group: Group){
+        groupNameLabel.text = group.groupName
+        
+        if let iconURL = URL(string: group.groupImage) {
+            imageContainer.kf.setImage(with: iconURL)
+        }
+    }
 }

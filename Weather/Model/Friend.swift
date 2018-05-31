@@ -7,14 +7,22 @@
 //
 
 import Foundation
-import UIKit
+import SwiftyJSON
 
 class Friend {
+    var friendId: UInt
     var friendName: String
-    var friendImage: UIImage
+    var friendImage: String
     
-    init(friendName: String, friendImage: UIImage) {
+    init(friendName: String, friendImage: String) {
         self.friendName = friendName
         self.friendImage = friendImage
+        self.friendId = 0
+    }
+    
+    init(json: JSON){
+        friendId = json["id"].uIntValue
+        friendName = json["first_name"].stringValue + " " + json["last_name"].stringValue
+        friendImage = json["photo_100"].stringValue
     }
 }

@@ -10,10 +10,17 @@ import UIKit
 
 class GroupListViewController: UITableViewController {
 
-    var groupList: [Group] = [Group(groupName: "Group1", groupImage: UIImage(named: "pic")!, groupPopulation: 100)]
+    var groupList: [Group] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let service = VKService()
+        service.getUserGroups(token: VarsManager.sharedInstance.vkToken){
+            [weak self] groups in
+            self?.groupList = groups
+            self?.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -28,8 +35,7 @@ class GroupListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupListCell", for: indexPath) as! GroupListViewCell
 
         let group = groupList[indexPath.row]
-        cell.groupNameLabel.text = group.groupName
-        cell.imageContainer.image = group.groupImage
+        cell.configure(group: group)
 
         return cell
     }
@@ -70,5 +76,4 @@ class GroupListViewController: UITableViewController {
             }
         }
     }
-
 }

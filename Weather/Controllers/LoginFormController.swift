@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 struct Credentials {
     static let validUsername = "admin"
@@ -15,50 +16,34 @@ struct Credentials {
 
 class LoginFormController: UIViewController {
 
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var mainScrollView: UIScrollView!
+   
+    @IBOutlet weak var mainWKWebView: WKWebView!{
+        didSet{
+            mainWKWebView.navigationDelegate = self
+        }
+    }
+    
+    var token: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        self.mainScrollView.addGestureRecognizer(hideKeyboardGesture)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        let service = VKService()
+        mainWKWebView.load(service.getAuthorizeRequest())
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func checkAuth() -> Bool {
-        guard let login = usernameTextField.text, let password = passwordTextField.text else {
-            return false
-        }
-        
-        if login == Credentials.validUsername && password == Credentials.validPassword {
-            return true
-        }
-        
-        return false
+        return token! != ""
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -76,39 +61,33 @@ class LoginFormController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
-    @IBAction func loginButtonPress(_ sender: Any) {
-//        if checkAuth(){
-//            performSegue(withIdentifier: "LoginSegue", sender: sender)
-//            print("Success login")
-//        }
-//        else{
-//            let alert = UIAlertController(title: "Error", message: "Wrong login / pass", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            present(alert, animated: true, completion: nil)
-//        }
-    }
-    
-    @objc func keyboardWasShown(notification: Notification){
-        let info = notification.userInfo! as NSDictionary
-        let kbSize = (info.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
-        let contentInsets = UIEdgeInsetsMake(0, 0, kbSize.height, 0)
-        
-        self.mainScrollView.contentInset = contentInsets
-        self.mainScrollView.scrollIndicatorInsets = contentInsets
-    }
-    
-    @objc func keyboardWillBeHidden(notification: Notification){
-        let contentInsets = UIEdgeInsets.zero
-        
-        self.mainScrollView.contentInset = contentInsets
-        mainScrollView.scrollIndicatorInsets = contentInsets
-    }
-    
-    @objc func hideKeyboard(){
-        self.mainScrollView.endEditing(true)
-    }
 
 }
 
-
+extension LoginFormController: WKNavigationDelegate{
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        guard let url = navigationResponse.response.url, url.path == "/blank.html", let fragment = url.fragment else {
+            decisionHandler(.allow)
+            return
+        }
+        
+        let params = fragment.components(separatedBy: "&").map {$0.components(separatedBy: "=")}.reduce([String: String]()){
+            result, param in
+            var dict = result
+            let key = param[0]
+            let value = param[1]
+            dict[key] = value
+            return dict
+        }
+        
+        token = params["access_token"]
+        print(token)
+        
+        VarsManager.sharedInstance.vkToken = token!
+        VarsManager.sharedInstance.userId = params["user_id"]!
+        
+        decisionHandler(.cancel)
+        
+        performSegue(withIdentifier: "LoginSegue", sender: mainWKWebView)
+    }
+}

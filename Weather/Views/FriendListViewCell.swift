@@ -7,8 +7,21 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FriendListViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageContainer: UIImageView!
+    
+    var friendId: UInt = 0
+    
+    func configure(friend: Friend){
+        titleLabel.text = friend.friendName
+        
+        friendId = friend.friendId
+        
+        if let iconURL = URL(string: friend.friendImage) {
+            imageContainer.kf.setImage(with: iconURL)
+        }
+    }
 }

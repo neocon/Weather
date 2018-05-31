@@ -8,15 +8,25 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class Group{
+    var groupId: UInt
     var groupName:String
-    var groupImage: UIImage
+    var groupImage: String
     var groupPopulation: UInt
     
-    init(groupName: String, groupImage: UIImage, groupPopulation: UInt) {
+    init(groupName: String, groupImage: String, groupPopulation: UInt) {
         self.groupImage = groupImage
         self.groupName = groupName
         self.groupPopulation = groupPopulation
+        self.groupId = 0
+    }
+    
+    init(json: JSON){
+        groupId = json["id"].uIntValue
+        groupName = json["name"].stringValue
+        groupPopulation = json["members_count"].uIntValue
+        groupImage = json["photo_100"].stringValue
     }
 }

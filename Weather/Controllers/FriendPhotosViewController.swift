@@ -11,8 +11,18 @@ import UIKit
 
 class FriendPhotosViewController: UICollectionViewController {
 
+    var photoList: [Photo] = []
+    var owner: UInt = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let service = VKService()
+        service.getUserPhoto(token: VarsManager.sharedInstance.vkToken, owner: owner){
+            [weak self] photos in
+            self?.photoList = photos
+            self?.collectionView?.reloadData()
+        }
     }
 
     /*
@@ -28,22 +38,20 @@ class FriendPhotosViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return photoList.count
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return photoList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageViewCell
     
-        cell.bigImageContainer.image = UIImage(named: "pic")
+        let ph = photoList[indexPath.row]
+        cell.configure(photo: ph)
     
         return cell
     }
-
-    
-
 }

@@ -10,11 +10,7 @@ import UIKit
 
 class AllGroupListViewController: UITableViewController, UISearchBarDelegate {
 
-    var groupList: [Group] = [Group(groupName: "Group1", groupImage: UIImage(named: "pic")!, groupPopulation: 100),
-                              Group(groupName: "Group2", groupImage: UIImage(named: "pic")!, groupPopulation: 200),
-                              Group(groupName: "Group3", groupImage: UIImage(named: "pic")!, groupPopulation: 1200),
-                              Group(groupName: "Group4", groupImage: UIImage(named: "pic")!, groupPopulation: 1300),
-                              Group(groupName: "Group5", groupImage: UIImage(named: "pic")!, groupPopulation: 2100)]
+    var groupList: [Group] = []
     var searchActive : Bool = false
     var filtered: [Group] = []
     
@@ -24,6 +20,13 @@ class AllGroupListViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        
+        let service = VKService()
+        service.searchGroups(token: VarsManager.sharedInstance.vkToken, searchString: ""){
+            [weak self] groups in
+            self?.groupList = groups
+            self?.tableView.reloadData()
+        }
     }
 
     //MARK: -Search functions
@@ -46,11 +49,12 @@ class AllGroupListViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filtered = groupList.filter({ (gr) -> Bool in
-            let tmp: NSString = NSString(string: gr.groupName)
-            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
-            return range.location != NSNotFound
-        })
+        VKService().searchGroups(token: VarsManager.sharedInstance.vkToken, searchString: searchText){
+            [weak self] groups in
+            let gr = groups
+            self?.filtered = gr
+        }
+        
         if(filtered.count == 0){
             searchActive = false;
         } else {
@@ -75,14 +79,10 @@ class AllGroupListViewController: UITableViewController, UISearchBarDelegate {
 
         if(searchActive){
             let group = filtered[indexPath.row]
-            cell.groupName.text = group.groupName
-            cell.imageContainer.image = group.groupImage
-            cell.populationLabel.text = String(group.groupPopulation)
+            cell.configure(group: group)
         } else {
             let group = groupList[indexPath.row]
-            cell.groupName.text = group.groupName
-            cell.imageContainer.image = group.groupImage
-            cell.populationLabel.text = String(group.groupPopulation)
+            cell.configure(group: group)
         }
         
         return cell

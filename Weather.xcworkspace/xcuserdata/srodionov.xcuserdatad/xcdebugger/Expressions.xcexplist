@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "VKService.getUserGroups(token:):VKService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "urlComponents.url!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in VKService.getUserGroups(token:completion:):VKService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;response&quot;][&quot;items&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in LoginFormController.webView(_:decidePolicyFor:decisionHandler:):LoginFormController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Friend.init(json:):Friend.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;first_name&quot;].stringValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FriendListViewController.prepare(for:sender:):FriendListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "((sender as? FriendListViewCell)?.friendId)!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VKService.searchGroups(token:searchString:completion:):VKService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "urlComponents.url!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FriendPhotosViewController.viewDidLoad():FriendPhotosViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "owner">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Group.init(json:):Group.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[0][&quot;name&quot;].stringValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VKService.getUserPhoto(token:owner:completion:):VKService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "urlComponents.url!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Photo.init(json:):Photo.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;sizes&quot;][0][&quot;url&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VKService.getUserGroups(token:completion:):VKService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "urlComponents.url!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

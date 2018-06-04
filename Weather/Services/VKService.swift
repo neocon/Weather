@@ -10,6 +10,7 @@ import Foundation
 import WebKit
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class VKService {
     let authHost = "oauth.vk.com"
@@ -54,6 +55,7 @@ class VKService {
             
             let json = JSON(data)
             let friends = json["response"]["items"].flatMap{Friend(json: $0.1)}
+            self.saveFriends(friends: friends)
             completion(friends)
         }
     }
@@ -78,6 +80,7 @@ class VKService {
             
             let json = JSON(data)
             let groups = json["response"]["items"].flatMap{Group(json: $0.1)}
+            self.saveGroups(groups: groups)
             completion(groups)
         }
     }
@@ -102,6 +105,7 @@ class VKService {
             
             let json = JSON(data)
             let photos = json["response"]["items"].flatMap{Photo(json: $0.1)}
+            self.saveFriendPhotos(photos: photos)
             completion(photos)
         }
     }
@@ -122,12 +126,48 @@ class VKService {
         ]
     
         Alamofire.request(urlComponents.url!).responseJSON{
-        response in
-        guard let data = response.value else {return}
+            response in
+            guard let data = response.value else {return}
+        
+            let json = JSON(data)
+            let groups = json["response"]["items"].flatMap{Group(json: $0.1)}
+            
+            //saveGroups(groups)
+            
+            completion(groups)
+        }
+    }
     
-        let json = JSON(data)
-        let groups = json["response"]["items"].flatMap{Group(json: $0.1)}
-        completion(groups)
+    func saveFriends(friends: [Friend]){
+        do{
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(friends)
+            try realm.commitWrite()
+        }catch{
+            print(error)
+        }
+    }
+    
+    func saveGroups(groups: [Group]){
+        do{
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(groups)
+            try realm.commitWrite()
+        }catch{
+            print(error)
+        }
+    }
+    
+    func saveFriendPhotos(photos: [Photo]){
+        do{
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(photos)
+            try realm.commitWrite()
+        }catch{
+            print(error)
         }
     }
 }

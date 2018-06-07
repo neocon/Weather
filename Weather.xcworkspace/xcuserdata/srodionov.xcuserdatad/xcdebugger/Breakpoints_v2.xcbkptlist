@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Services/VKService.swift"
-            timestampString = "549469490.500029"
+            timestampString = "550073388.180492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "getUserGroups(token:completion:)"
             landmarkType = "7">
             <Locations>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Services/VKService.swift"
-            timestampString = "549469490.5002379"
+            timestampString = "550073388.18067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "searchGroups(token:searchString:completion:)"
             landmarkType = "7">
             <Locations>
@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Services/VKService.swift"
-            timestampString = "549469490.50027"
+            timestampString = "550073388.180724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "getUserPhoto(token:owner:completion:)"
             landmarkType = "7">
             <Locations>
@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Model/Photo.swift"
-            timestampString = "549469490.500303"
+            timestampString = "550073388.1807719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "init(json:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -231,60 +231,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weather/Controllers/FriendPhotosViewController.swift"
-            timestampString = "549469490.500486"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Weather.FriendPhotosViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/srodionov/GeekBrains/Projects/LEVEL2/Weather/Weather/Controllers/FriendPhotosViewController.swift"
-                  timestampString = "549469252.715243"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Weather.Photo&gt;) -&gt; () in Weather.FriendPhotosViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/srodionov/GeekBrains/Projects/LEVEL2/Weather/Weather/Controllers/FriendPhotosViewController.swift"
-                  timestampString = "549469252.717543"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "25">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Weather/Controllers/FriendListViewController.swift"
-            timestampString = "549469490.500525"
+            timestampString = "550073388.180824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
             <Locations>
@@ -328,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather/Controllers/FriendPhotosViewController.swift"
-            timestampString = "549469490.5005569"
+            timestampString = "550073388.1808749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -343,46 +295,46 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weather/Controllers/FriendPhotosViewController.swift"
-            timestampString = "549469490.500589"
+            filePath = "Weather/Controllers/LoginFormController.swift"
+            timestampString = "550073388.181084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "webView(_:decidePolicyFor:decisionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Weather.FriendPhotosViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/srodionov/GeekBrains/Projects/LEVEL2/Weather/Weather/Controllers/FriendPhotosViewController.swift"
-                  timestampString = "549469311.221217"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "239">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Weather.Photo&gt;) -&gt; () in Weather.FriendPhotosViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/srodionov/GeekBrains/Projects/LEVEL2/Weather/Weather/Controllers/FriendPhotosViewController.swift"
-                  timestampString = "549469311.2229199"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "25">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather/Controllers/LoginFormController.swift"
+            timestampString = "550073388.1811351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "webView(_:decidePolicyFor:decisionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather/Controllers/LoginFormController.swift"
+            timestampString = "550073388.18119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "webView(_:decidePolicyFor:decisionHandler:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

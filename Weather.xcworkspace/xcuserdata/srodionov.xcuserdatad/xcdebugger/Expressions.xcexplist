@@ -3,12 +3,23 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "LoginFormController.webView(_:decidePolicyFor:decisionHandler:):LoginFormController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "token">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "VKService.getUserGroups(token:):VKService.swift">
          <PersistentStrings>
             <PersistentString
                value = "urlComponents.url!">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in LoginFormController.webView(_:decidePolicyFor:decisionHandler:):LoginFormController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in VKService.getUserGroups(token:completion:):VKService.swift">
@@ -19,21 +30,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #3 in LoginFormController.webView(_:decidePolicyFor:decisionHandler:):LoginFormController.swift">
+         contextName = "FriendListViewController.prepare(for:sender:):FriendListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "((sender as? FriendListViewCell)?.friendId)!">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "Friend.init(json:):Friend.swift">
          <PersistentStrings>
             <PersistentString
                value = "json[&quot;first_name&quot;].stringValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "FriendListViewController.prepare(for:sender:):FriendListViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "((sender as? FriendListViewCell)?.friendId)!">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -62,7 +70,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "VKService.getUserPhoto(token:owner:completion:):VKService.swift">
+         contextName = "VKService.getUserGroups(token:completion:):VKService.swift">
          <PersistentStrings>
             <PersistentString
                value = "urlComponents.url!">
@@ -78,7 +86,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "VKService.getUserGroups(token:completion:):VKService.swift">
+         contextName = "VKService.getUserPhoto(token:owner:completion:):VKService.swift">
          <PersistentStrings>
             <PersistentString
                value = "urlComponents.url!">

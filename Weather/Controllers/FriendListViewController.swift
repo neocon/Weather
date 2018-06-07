@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FriendListViewController: UITableViewController {
 
@@ -15,11 +16,20 @@ class FriendListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let service = VKService()
-        service.getUserFriends(token: VarsManager.sharedInstance.vkToken){
-            [weak self] friends in
-            self?.friendsList = friends
-            self?.tableView.reloadData()
+//        let service = VKService()
+//        service.getUserFriends(token: VarsManager.sharedInstance.vkToken){
+//            [weak self] friends in
+//            self?.friendsList = friends
+//            self?.tableView.reloadData()
+//        }
+        
+        do{
+            let realm = try Realm()
+            let fl = realm.objects(Friend.self);
+            self.friendsList = Array(fl)
+        }
+        catch{
+            print(error)
         }
     }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupListViewController: UITableViewController {
 
@@ -15,11 +16,20 @@ class GroupListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let service = VKService()
-        service.getUserGroups(token: VarsManager.sharedInstance.vkToken){
-            [weak self] groups in
-            self?.groupList = groups
-            self?.tableView.reloadData()
+//        let service = VKService()
+//        service.getUserGroups(token: VarsManager.sharedInstance.vkToken){
+//            [weak self] groups in
+//            self?.groupList = groups
+//            self?.tableView.reloadData()
+//        }
+        
+        do{
+            let realm = try Realm()
+            let gl = realm.objects(Group.self);
+            self.groupList = Array(gl)
+        }
+        catch{
+            print(error)
         }
     }
 

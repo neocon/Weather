@@ -13,11 +13,13 @@ import RealmSwift
 class Photo: Object {
     @objc dynamic var photoId: UInt = 0
     @objc dynamic var photoUrl: String = ""
+    @objc dynamic var ownerId: UInt = 0
     
     convenience init(json: JSON){
         self.init()
         
         self.photoId = json["id"].uIntValue
         self.photoUrl = json["sizes"][0]["url"].stringValue
+        self.ownerId = json["owner_id"].uIntValue
     }
 }

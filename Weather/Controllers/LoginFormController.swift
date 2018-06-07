@@ -86,6 +86,8 @@ extension LoginFormController: WKNavigationDelegate{
         VarsManager.sharedInstance.vkToken = token!
         VarsManager.sharedInstance.userId = params["user_id"]!
         
+        VKService().updateData(token: token!)
+        
         decisionHandler(.cancel)
         
         performSegue(withIdentifier: "LoginSegue", sender: mainWKWebView)

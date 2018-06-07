@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class FriendPhotosViewController: UICollectionViewController {
@@ -17,11 +18,20 @@ class FriendPhotosViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let service = VKService()
-        service.getUserPhoto(token: VarsManager.sharedInstance.vkToken, owner: owner){
-            [weak self] photos in
-            self?.photoList = photos
-            self?.collectionView?.reloadData()
+//        let service = VKService()
+//        service.getUserPhoto(token: VarsManager.sharedInstance.vkToken, owner: owner){
+//            [weak self] photos in
+//            self?.photoList = photos
+//            self?.collectionView?.reloadData()
+//        }
+        
+        do{
+            let realm = try Realm()
+            let up = realm.objects(Photo.self).filter("ownerId==%@", owner);
+            self.photoList = Array(up)
+        }
+        catch{
+            print(error)
         }
     }
 

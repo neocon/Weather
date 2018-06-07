@@ -36,7 +36,7 @@ class VKService {
         return URLRequest(url: urlComponents.url!)
     }
     
-    func getUserFriends(token: String, completion: @escaping([Friend]) -> Void){
+    func getUserFriends(token: String, completion: @escaping() -> Void){
         var urlComponents = URLComponents()
         
         urlComponents.scheme = "https"
@@ -56,11 +56,16 @@ class VKService {
             let json = JSON(data)
             let friends = json["response"]["items"].flatMap{Friend(json: $0.1)}
             self.saveFriends(friends: friends)
-            completion(friends)
+            
+            for fr in friends{
+                self.getUserPhoto(token: token, owner: fr.friendId){}
+            }
+            
+            completion()
         }
     }
     
-    func getUserGroups(token: String, completion: @escaping([Group]) -> Void){
+    func getUserGroups(token: String, completion: @escaping() -> Void){
         var urlComponents = URLComponents()
         
         urlComponents.scheme = "https"
@@ -81,11 +86,11 @@ class VKService {
             let json = JSON(data)
             let groups = json["response"]["items"].flatMap{Group(json: $0.1)}
             self.saveGroups(groups: groups)
-            completion(groups)
+            completion()
         }
     }
     
-    func getUserPhoto(token: String, owner: UInt, completion: @escaping([Photo]) -> Void){
+    func getUserPhoto(token: String, owner: UInt, completion: @escaping() -> Void){
         var urlComponents = URLComponents()
         
         urlComponents.scheme = "https"
@@ -106,7 +111,7 @@ class VKService {
             let json = JSON(data)
             let photos = json["response"]["items"].flatMap{Photo(json: $0.1)}
             self.saveFriendPhotos(photos: photos)
-            completion(photos)
+            completion()
         }
     }
     
@@ -169,5 +174,10 @@ class VKService {
         }catch{
             print(error)
         }
+    }
+    
+    func updateData(token: String){
+        getUserFriends(token: token){}
+        getUserGroups(token: token){}
     }
 }
